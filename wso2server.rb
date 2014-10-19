@@ -26,7 +26,7 @@ require 'socket'
       system "#{@server_location}/wso2*/bin/wso2server.sh stop"
      end
      
-     # start wso2 server based on the hostname
+     # start wso2 server based on the cluster type - detected using hostname
      action "start" do
        validate :cluster, String
        isCarbonHomeValid?
@@ -39,7 +39,7 @@ require 'socket'
         end 
      end
 
-     # stop wso2 server based on the hotname 
+     # stop wso2 server based on cluster type - detected using hostname
      action "stop" do
       validate :cluster, String
        isCarbonHomeValid?
